@@ -16,3 +16,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->post('/reset', 'AccountController@reset');
+$router->get('/balance', 'AccountController@index');
+$router->post('/event', 'AccountController@event');
