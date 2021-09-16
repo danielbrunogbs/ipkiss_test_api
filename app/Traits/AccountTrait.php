@@ -32,10 +32,13 @@ trait AccountTrait
 		]);
 
 		return [
-			'destination' => [
-				'id' => (string) $account->id,
-				'balance' => $account->balance
-			]
+			[
+				'destination' => [
+					'id' => (string) $account->id,
+					'balance' => $account->balance
+				]
+			],
+			201
 		];
 	}
 
@@ -57,10 +60,13 @@ trait AccountTrait
 		]);
 
 		return [
-			'origin' => [
-				'id' => (string) $account->id,
-				'balance' => $account->balance
-			]
+			[
+					'origin' => [
+						'id' => (string) $account->id,
+						'balance' => $account->balance
+				]
+			],
+			201
 		];
 	}
 
@@ -89,14 +95,17 @@ trait AccountTrait
 		]);
 
 		return [
-			'origin' => [
-				'id' => (string) $accountOrigin->id,
-				'balance' => $accountOrigin->balance
+			[
+				'origin' => [
+					'id' => (string) $accountOrigin->id,
+					'balance' => $accountOrigin->balance
+				],
+				'destination' => [
+					'id' => (string) $accountDestination->id,
+					'balance' => $accountDestination->balance
+				]
 			],
-			'destination' => [
-				'id' => (string) $accountDestination->id,
-				'balance' => $accountDestination->balance
-			]
+			200
 		];
 	}
 }
