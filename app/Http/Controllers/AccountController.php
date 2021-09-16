@@ -62,7 +62,7 @@ class AccountController extends Controller
 
             DB::commit();
 
-            return response()->json($operation, 200);
+            return response()->json(...$operation);
         }
         catch(\Exception $e)
         {
